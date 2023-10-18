@@ -421,3 +421,120 @@ keywords and are prompted with results and then you select a result and it redir
     </div>
    
 </div>
+<!--FireBase-->
+
+
+  <script type="module">
+   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+   import { getDatabase, ref, push, orderByChild, limitToLast, onValue, set } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+   import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+
+   const firebaseConfig = {
+    apiKey: "AIzaSyDuXB9PnKlU976r2mPyybC2oOyXRdw4C4E",
+    authDomain: "portfolio-636c4.firebaseapp.com",
+    databaseURL: "https://portfolio-636c4-default-rtdb.firebaseio.com",
+    projectId: "portfolio-636c4",
+    storageBucket: "portfolio-636c4.appspot.com",
+    messagingSenderId: "932093849356",
+    appId: "1:932093849356:web:5e5fe7874ab0b8e0b4e329",
+    measurementId: "G-2KEGL980YW"
+  };
+
+   const app = initializeApp(firebaseConfig);
+   const database = getDatabase(app);
+   const auth = getAuth(app);
+   const commentsRef = ref(database, "comments");
+
+   //Sign out of account 
+   document.getElementById('sign-out-button').addEventListener('click', () => {
+    
+    getAuth().signOut().then(() => {
+        // Signed out redirect to the welcome page
+        window.location.href = "/BlakeG's%20Portfolio/Welcome Page.html";
+    }).catch((error) => {
+        // An error occurred during sign-out
+        console.error('Sign-out error:', error);
+    });
+});
+   // Function to post a comment
+   function postComment() {
+       const name = document.getElementById('Name').value;
+       const commentText = document.getElementById('comment-input').value;
+
+       if (name && commentText) {
+           const timestamp = new Date().toLocaleString();
+           const commentData = {
+               name: name,
+               comment: commentText,
+               timestamp: timestamp
+           };
+
+           // Push the comment data to Firebase
+           push(commentsRef, commentData);
+
+           // Clear the input fields
+           document.getElementById('Name').value = '';
+           document.getElementById('comment-input').value = '';
+       }
+   }
+
+   document.getElementById('comment-button').addEventListener('click', postComment);
+
+   // Function to display comments from Firebase
+   function displayComments() {
+    onValue(commentsRef, (snapshot) => {
+        const commentList = document.getElementById('comment-list');
+        commentList.innerHTML = ''; // Clear the existing comments
+
+        snapshot.forEach((childSnapshot) => {
+            const comment = childSnapshot.val();
+            const commentDiv = document.createElement('div');
+            commentDiv.classList.add('comment'); // Add a class for styling
+
+            const timestampSpan = document.createElement('span');
+            timestampSpan.classList.add('timestamp');
+            timestampSpan.textContent = `(${comment.timestamp})`;
+
+            const nameSpan = document.createElement('span');
+            nameSpan.classList.add('name');
+            nameSpan.textContent = `${comment.name} Commented:`;
+
+            const commentText = document.createElement('p');
+            commentText.textContent = comment.comment;
+
+            commentDiv.appendChild(timestampSpan);
+            commentDiv.appendChild(nameSpan);
+            commentDiv.appendChild(commentText);
+
+            commentList.appendChild(commentDiv);
+        });
+    });
+}
+   displayComments();
+</script>
+<script src="app.js"></script> 
+</body>
+<footer>
+   
+<!--interactive footer section with buttons that link to various places-->
+    <div>
+    <p>Thank you for visiting my portfolio page you have reached the bottom of the projects page. If you would like to get in contact with me I have 
+        my socials and contact details listed below.
+    </p>
+    <article class="footlank">
+        <nav class="footnav">
+            <ul>
+                <li><a href= https://www.facebook.com/profile.php?id=100010154949455>Facebook</a></li>
+                <li><a href= https://mail.google.com/mail/?view=cm&fs=1&to=blakegillanders@gmail.com&su=SUBJECT&body=BODY&bcc=>Gmail</a></li>
+                <li><a href= Contactme.html>Contact me</a></li>
+            </ul>
+        </nav>
+
+    </article>
+
+
+</footer>
+    
+
+
+</html>
