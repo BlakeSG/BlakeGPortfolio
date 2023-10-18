@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blake Gillanders-Portfolio</title>
+    <link href="projects.css" rel="stylesheet"/>
+    <link rel="preload" href="background1.jpg" as="image">
+    <link rel="prefetch" href="image-to-prefetch.jpg" as="image">
+    <script src="Projects.js"></script> 
+    
+    
+</head>
+
+<main>
+    <header><!--Header/navbar-->
+        <!--Left drop down Menu-->
+        <div class="left-menu" id="leftMenu">
+            
+            <button class="menu-button" onclick="toggleMenu()">
+
+                <P alt="Menu Icon" class="menu-icon">|||</P>
+            </button>
+            
+            <div class="dropdown-content">
+                <ul class="Menu_List">
+                <li><h2>Menu</h2></li>
+                <!--Light/Dark buttons-->
+                <li>   <label class="radio-container">
+                    <input id="Lightmode" type="radio" name="options" value="option1" checked> Light mode
+                    <span class="radio-checkmark"></span>
+                </label>
+                <br>
+                </li>
+                <li><label class="radio-container">
+                    <input id="Darkmode" type="radio" name="options" value="option2"> Darkmode
+                    <span class="radio-checkmark"></span>
+                </label></li>
+                <li><li><button id="sign-out-button">Change user</button></li></li>
+                <div class="rmn"><!--These naviagtion options ONLY show up on devices with a screen width of less than 1100px to
+                    avoid overlaps on the navbar on smaller devices-->
+                    <li><p>Navigation</p></li>
+                    
+                    <li><a  href="/BlakeG's%20Portfolio/Home%20page/Home.html">Home</a></li>
+                        <li><a   href="/BlakeG's%20Portfolio/Skills%20page/MySkills.html" >MySkills</a></li>
+                        <li><a href="/BlakeG's%20Portfolio/Projects%20page/projects.html">Projects</a></li>
+                        <li><a  href="/BlakeG's%20Portfolio/Contact%20page/Contactme.html" >Contact me</a></li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+<!-- Search box/bar -->
+<div class="search-bar">
+    <form id="search-form">
+        <input type="text" name="" class="searchbox" id="find" placeholder="Search here...." onkeyup="search()" autocomplete="off">
+        <button class="button" type="submit">Search</button>
+    </form>
+    <!-- Dropdown menu for Search results -->
+    <div class="dropdown" id="product-dropdown">
+        <!-- Search results are added via JavaScript -->
+    </div>
+</div>
+<!--Search results styling is here for easier access-->
+<style>
+.dropdown {
+    position: absolute;
+    width: 66%;
+    max-height: 150px; 
+    overflow-y: auto; 
+    display: none; 
+    background-color: white;
+    border: 3px solid #000000;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    z-index: 1;
+    padding:10px;
+    margin-left:-4px;
+}
+.dropdown a{
+    display: block;
+    color:blue;
+    margin-bottom:5px;
+}
+.dropdown a:hover{
+    background-color:gainsboro;
+    padding:4px;
+}
+
+</style>
+<!--Java script for search function is here due to issues with adding it onto the main script sheet-->
+<script>
+   function search() {
+    let filter = document.getElementById('find').value.toUpperCase();
+    let dropdown = document.getElementById('product-dropdown');
+    dropdown.innerHTML = '';
+//results
+    let products = [
+        { name: "Contact me", url: "/BlakeG's%20Portfolio/Contact%20page/Contactme.html" },
+        { name: "Projects", url: "/BlakeG's%20Portfolio/Projects%20page/projects.html" },
+        { name: "Skills", url: "/BlakeG's%20Portfolio/Skills%20page/MySkills.html" }, 
+        { name: "Home", url: "/BlakeG's%20Portfolio/Home%20page/Home.html"},
+        { name: "Comments", url:"/BlakeG's%20Portfolio/Home%20page/Home.html#commenT"},
+        { name: "Contact Form", url:"/BlakeG's%20Portfolio/Contact%20page/Contactme.html#contactforM"},
+    ];
+
+    for (let i = 0; i < products.length; i++) {
+        let product = products[i];
+        if (product.name.toUpperCase().indexOf(filter) > -1) {
+            let option = document.createElement('a');
+            option.href = product.url;
+            option.textContent = product.name;
+            dropdown.appendChild(option);
+        }
+    }
+
+    // if searchbox === empty display none(hide search box if empty)
+    if (filter === "") {
+        dropdown.style.display = 'none';
+    } else if (dropdown.children.length > 0) {
+        dropdown.style.display = 'block';
+    } else {
+        dropdown.style.display = 'none';
+    }
+}
+</script>
+<!--Right Nav buttons-->
+        <div class="right-menu">
+            <ul>
+                <li><a href="/BlakeG's%20Portfolio/Home%20page/Home.html">Home</a></li>
+                    <li><a  href="/BlakeG's%20Portfolio/Skills%20page/MySkills.html" >MySkills</a></li>
+                    <li><a href="/BlakeG's%20Portfolio/Projects%20page/projects.html">Projects</a></li>
+                    <li><a href="/BlakeG's%20Portfolio/Contact%20page/Contactme.html" >Contact me</a></li>
+            </ul>
+        </div>  
+    </header>
+</div>
+<div class="padding"></div>
+</main>  
+<body>    <!--Body section-->
+        <div  id="elementToChange" class="Aboutme Lightmode"><!--Light/dark mode classes to switch-->
+           <!--all sections have the same design so are only commented once-->
+            <h1 class="title">My Projects</h1>
+            <p class="project-description">Welcome to my project portfolio. Here, you'll discover a collection of my completed projects from various classes
+                 and personal endeavors. While it's currently a work in progress, expect regular updates as I continue my learning journey.</p>
+           <div class="Web502"><!--Wen502 projects Each project category has its own box on the page-->
+    <h2 class="section-title">Web502 Projects</h2>
+    <p class="section-description">Welcome to my Web502 Projects showcase. Although it's currently empty, this canvas holds the potential for exciting web creations in the future.</p>
+    <!--Styled expandable sections-->
+    <details class="project-details">
+        <summary class="project-summary">My Portfolio Assignment</summary>
+        <p class="project-description">In this Web502 assignment, I embarked on a creative journey to design and develop a functional portfolio website using HTML 
+            and CSS. The website is a canvas for showcasing my skills and personality, carefully crafted to meet specific functionality requirements. Explore below:</p>
+            <!--Links for all projects relating to Web502-->
+            <ul class="project-links">
+            <li><a href="https://github.com/BlakeSG/test/tree/main" class="project-link">GitHub Repository</a></li>
+            <li><a href="SRS.docx" class="project-link">SRS Document</a></li>
+        </ul>
+    </details>
+    <details class="project-details"> 
+        <summary class="project-summary">WEB assessment 2</summary>
+        <p>This section is currently empty</p>
+    </details>
+
+</div>
+<div class="Web502">
+    <h2 class="section-title">Net502 Projects</h2>
+    <p class="section-description">This is where all my completed Net 502 projects will be uploaded. This section is currently empty but I
+         will be uploading my completed projects here in the future</p>
+    <details class="project-details">
+        <summary class="project-summary">NetWorking assessment 1</summary>
+        <p> error not found</p>
+        <ul class="project-links">
+            <li><button>Video</button></li>
+            <li><button>Documentation</button></li>
+        </ul>
+    </details>
+</div>
+<div class="Web502">
+    <h2 class="section-title">Syd502 Projects</h2>
+    <p class="section-description">This is where all my completed Syd502 projects will be uploaded. This section is currently empty but I
+         will be uploading my completed projects here in the future</p>
+    <details class="project-details">
+        <summary class="project-summary">SYD assessment 1</summary>
+        <p> In this assessment we were tasked to gather information from 2 different documents from both the webstore owner and the projects manager to find what requirements they have
+            for their online book store and research those requirements through online research by comparing 2 different websites to see how they meet those requirements and also researching
+            responses from people who regularly online shop through online stores. This was achieved by making a 10 question google form and getting 10+ people to complete it and interviewing at least
+            two people.
+        </p>
+        <ul class="Link to my completed assessment 1 documentation">
+            <li><a href="SYD502 Blake Gillanders.docx">Assessment 1 HTML</a></li>
+        </ul>
+    </details>
+    <details class="project-details"> 
+        <summary class="project-summary">SYD assessment 2</summary>
+        <p>This section is currently empty</p>
+    </details>
+</div>
+<div class="Web502">
+    <h2 class="section-title">Dat502 Projects</h2>
+    <p class="section-description">This is where all my completed Dat502 projects will be uploaded. This section is currently empty but I
+         will be uploading my completed projects here in the future</p>
+    
+    <details class="project-details">
+        <summary class="project-summary">DAT assessment 1</summary>
+        <p> In my first Data502 assessment we were tasked to read through dialouge between "jill" who owns a fictional realestate company and an interviewer to find information 
+            about a new database they want designed. we gathered information about the requirements from this dialouge and were also provided with their current data management system
+            and identified all current mistakes and security risks and then design the new data base system to correct those mistakes and follow the rules of the nz privacy act.
+
+        </p>
+        <ul class="project-links">
+            <li><a href="DAT 502 assessment 1.docx"></a></li>
+           
+        </ul>
+    </details>
+    <details class="project-details"> 
+        <summary class="project-summary">DAT assessment 2</summary>
+        <p>This section is currently empty</p>
+    </details>
+</div>
+<div class="Web502">
+    <!--Personal projects or projects I have done for practice.-->
+    <h2 class="section-title">Personal Projects</h2>
+    <p class="section-description">This is where all my completed Net 502 projects will be uploaded. This section is currently empty but I
+         will be uploading my completed projects here in the future</p>
+    <details class="project-details">
+        <summary class="project-summary">Project 1, Phase 1 A simple calculator
+        </summary>
+        <p> This is phase 1 of my first java script project I decided to make a functioning calculator. This calculator is very simple to use and has a simple mechanism behind it so to calculate your equasion simply
+            type in your desired numbers into both of the empty input fields and then press the "calculate button" this button will run the function and return accurate results. By default the operator is set
+            to the + operator if you press the "toggle operator" button at the button it will cycle through the "+, -, / and *" operators and then return accurate results. Below is a screen shot of my java script code with notes
+            to make it easy to understand.
+          </p>
+          <h2>Heres my code for the calculator</h2>
+          <!--Animated screen shot of my calculator code-->
+          
+          <img class="transform-on-click" id="myElement" src="Screenshot 2023-10-03 124036.png">
+          
+          <!--decided to add styling for the screen shot here-->
+          <style>
+            /*Simple styling for image setting size and animation*/
+           
+            
+            .transform-on-click {
+                width: 50%;
+                height: 50%;
+                background-color: blue;
+                color: white;
+                text-align: center;
+                line-height: 100px;
+                cursor: pointer;
+                transition: transform 0.3s; 
+                margin-left:24%;
+            }
+            
+
+            .transformed {
+            transform: scale(2); 
+            }
+          
+          </style>
+            <script>
+             
+const myElement = document.getElementById("myElement");
+
+myElement.addEventListener("click", function () {
+  this.classList.toggle("transformed");
+});   
+            </script>
+          <!--My basic calculator-->
+          <h2 class="ch2"> Heres my calculator</h2>
+          <style>
+            .ch2{
+                padding:20px;
+            }
+          </style>
+          <div class="calc-container">
+            <h1>Calculator</h1>
+            <div class="container">
+                <!--Calculator inputs-->
+                <input type="text" placeholder="number 1" class="num1">
+                <h3 id="operator">+</h3>
+                <input type="text" placeholder="number 2" class="num2">
+            </div>
+            <div class="containerres">
+                <div class="row resrow">
+                    <h3 id="result">0</h3>
+                </div>
+            </div>
+            <!--only two buttons linked to java-->
+            <button onclick="toggleOperator()">Toggle Operator</button>
+            <button onclick="calculate()">Calculate</button>
+        </div>
+        <!--Once again decided to style the calculator here-->
+        <!--Nothing to special below just making the calculator look a little bit better-->
+       <style>
+.calc-container {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #eeeded;
+    transition: transform 0.5s ease;
+}
+.calc-container:hover{
+    transform:scale(1.2);
+    transition: transform 0.5s ease;
+}
+.calc-container h1 {
+    border-bottom: 3px solid #333;
+    margin-bottom: 20px;
+    margin-top:1px;
+}
+
+.container {
+    margin: 10px auto;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.num1, .num2 {
+    width: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius:5px;
+    border:1px solid rgb(238, 238, 238);
+    background-color:#fcfcfc;
+}
+
+#operator {
+    font-size: 24px;
+    margin: 0 10px; 
+}
+
+.containerres {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.resrow {
+    margin: 0 auto;
+    width: 80%;
+}
+
+#result {
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #e6e6e6;
+    padding: 10px;
+    font-size: 20px;
+    margin: 10px auto;
+    width: 80%;
+}
+
+.calc-container button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: #333;
+    color: #fff;
+}
+
+.calc-container button:hover {
+    background-color: #555;
+}
+       </style>
+    </details>
+</div>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+   import { getDatabase, ref, push, orderByChild, limitToLast, onValue, set } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+   import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+
+   const firebaseConfig = {
+    apiKey: "AIzaSyDuXB9PnKlU976r2mPyybC2oOyXRdw4C4E",
+    authDomain: "portfolio-636c4.firebaseapp.com",
+    databaseURL: "https://portfolio-636c4-default-rtdb.firebaseio.com",
+    projectId: "portfolio-636c4",
+    storageBucket: "portfolio-636c4.appspot.com",
+    messagingSenderId: "932093849356",
+    appId: "1:932093849356:web:5e5fe7874ab0b8e0b4e329",
+    measurementId: "G-2KEGL980YW"
+  };
+
+   const app = initializeApp(firebaseConfig);
+   const database = getDatabase(app);
+   const auth = getAuth(app);
+   //Sign out of account 
+   document.getElementById('sign-out-button').addEventListener('click', () => {
+    
+    getAuth().signOut().then(() => {
+        // Signed out redirect to the welcome page
+        window.location.href = "/BlakeG's%20Portfolio/Welcome Page.html";
+    }).catch((error) => {
+        // An error occurred during sign-out
+        console.error('Sign-out error:', error);
+    });
+});
+</script>
+<script src="/BlakeG's%20Portfolio/Home%20page/app.js"></script><!--Page styling script-->
+<script src="Projects.js"></script> <!--Calculator script-->
+
+                    </body>
+                </div>
+    <footer><!--And the footer section-->
+   
+
+        <div>
+        <p>Thank you for visiting my portfolio page you have reached the bottom of the projects page. If you would like to get in contact with me I have 
+            my socials and contact details listed below.
+        </p>
+        <article class="footlank">
+            <nav class="footnav">
+                <ul>
+                    <li><a href= https://www.facebook.com/profile.php?id=100010154949455>Facebook</a></li>
+                    <li><a href= https://mail.google.com/mail/?view=cm&fs=1&to=blakegillanders@gmail.com&su=SUBJECT&body=BODY&bcc=>Gmail</a></li>
+                    <li><a href= Contactme.html>Contact me</a></li>
+                </ul>
+            </nav>
+
+        </article>
+  
+
+    </footer>
+
+</html>
