@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blake Gillanders-Portfolio</title>
+    <link href="styles.css" rel="stylesheet"/>
+    <script src="script.js"></script>
+</head>
+<body>
+  <div class="Logbox">
+    <h1>Please sign in to continue</h1>
+    <hr>
+  <div id="Login">
+    <h2>Enter your email
+    <input type="text" id="email" name="email" placeholder="E-mail" required/></h2>
+    <h2>Enter your password
+    <input type="password" id="password" name="password" placeholder="Password" required/></h2>
+    <button id="login" name="login_submit">Log-in</button>
+    <button id="toggleSignUpFromLogin">Sign Up</button>
+</div>
+<div id="SignUp" style="display: none;">
+  <h2>Enter your username
+    <input type="text" id="Username" name="Username" placeholder="Username" required/></h2>
+    <h2> Enter your email
+    <input type="text" id="emailSignup" name="email" placeholder="E-mail" required/></h2>
+    <h2> Enter your password
+    <input type="password" id="passwordSignup" name="password" placeholder="Password" required/></h2>
+    <button id="signup" name="signup_submit">Sign up</button>
+    <button id="toggleLoginFromSignUp">Go back to login</button>
+</div>
+</div>
+</body>
+<script src="welcome.js"></script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
+  import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, setPersistence, browserSessionPersistence } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDuXB9PnKlU976r2mPyybC2oOyXRdw4C4E",
+    authDomain: "portfolio-636c4.firebaseapp.com",
+    databaseURL: "https://portfolio-636c4-default-rtdb.firebaseio.com",
+    projectId: "portfolio-636c4",
+    storageBucket: "portfolio-636c4.appspot.com",
+    messagingSenderId: "932093849356",
+    appId: "1:932093849356:web:5e5fe7874ab0b8e0b4e329",
+    measurementId: "G-2KEGL980YW"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const database = getDatabase(app);
+  const auth = getAuth(app);
+
+  setPersistence(auth, browserSessionPersistence); // or 'local' for permanent persistence
+  
+  document.getElementById('login').addEventListener('click', (e) => {
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        const dt = new Date();
+        set(ref(database, 'users/' + user.uid), {
+          last_login: dt.toString(),
+        });
+        alert('Logged in, Press "ok" to continue');
+
+        window.location.href = "/BlakeG's%20Portfolio/Home%20page/Home.html";
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        alert(errorMessage);
+      });
+  });
+
+  const user = auth.currentUser;
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is signed in
+      const uid = user.uid;
+      // ...
+    } else {
+      // User is signed out
+      // ...
+    }
+  });
+  const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const emailSignupInput = document.getElementById('email');
+        const passwordSignupInput = document.getElementById('password');
+        const usernameInput = document.getElementById('Username');
+
+        const loginSection = document.getElementById('Login');
+        const signUpSection = document.getElementById('SignUp');
+        const toggleSignUpButton = document.getElementById('toggleSignUpFromLogin');
+        const toggleLoginButton = document.getElementById('toggleLoginFromSignUp')
+        // Event listener to toggle between Login and Sign Up sections
+        toggleSignUpButton.addEventListener('click', () => {
+            loginSection.style.display = 'none';
+            signUpSection.style.display = 'block';
+        });
+        toggleLoginButton.addEventListener('click', () => {
+            loginSection.style.display = 'block';
+            signUpSection.style.display = 'none';
+        });
+
+        document.getElementById('signup').addEventListener('click', (e) => {
+            var email = document.getElementById('emailSignup').value;
+            var password = document.getElementById('passwordSignup').value;
+            var username = document.getElementById('Username').value;
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+
+                    set(ref(database, 'users/' + user.uid), {
+                        username: username,
+                        email: email
+                    });
+
+                    alert('User Created');
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+
+                    alert(errorMessage);
+                });
+        });
+
+</script>
+</html>
