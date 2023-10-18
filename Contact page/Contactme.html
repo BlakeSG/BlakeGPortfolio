@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blake Gillanders-Portfolio</title>
+    <link href="contact.css" rel="stylesheet"/>
+    <link rel="preload" href="background1.jpg" as="image">
+    <link rel="prefetch" href="image-to-prefetch.jpg" as="image">
+    <script src="contact.js"></script>
+</head>
+
+<main>
+        
+    <header>
+        <!--Left drop down menu-->
+        <div class="left-menu" id="leftMenu">
+            
+            <button class="menu-button" onclick="toggleMenu()">
+
+                <P alt="Menu Icon" class="menu-icon">|||</P>
+            </button>
+            
+            <div class="dropdown-content">
+                <ul class="Menu_List">
+                <li><h2>Menu</h2></li>
+                <!--Light/dark buttons within drop down menu-->
+                <li>   <label class="radio-container">
+                    <input id="Lightmode" type="radio" name="options" value="option1" checked> Light mode
+                    <span class="radio-checkmark"></span>
+                </label>
+                <br>
+                </li>
+                <li><label class="radio-container">
+                    <input id="Darkmode" type="radio" name="options" value="option2"> Darkmode
+                    <span class="radio-checkmark"></span>
+                </label></li>
+                <li><li><button id="sign-out-button">Change user</button></li></li>
+                <div class="rmn"><!--These naviagtion options ONLY show up on devices with a screen width of less than 1100px to
+                    avoid overlaps on the navbar on smaller devices-->
+                    <li><p>Navigation</p></li>
+                    
+                    <li><a  href="/BlakeG's%20Portfolio/Home%20page/Home.html">Home</a></li>
+                        <li><a   href="/BlakeG's%20Portfolio/Skills%20page/MySkills.html" >MySkills</a></li>
+                        <li><a href="/BlakeG's%20Portfolio/Projects%20page/projects.html">Projects</a></li>
+                        <li><a  href="/BlakeG's%20Portfolio/Contact%20page/Contactme.html" >Contact me</a></li>
+                    </div>
+                </ul>
+            </div>
+        </div>>
+<!-- Search box/bar -->
+<div class="search-bar">
+    <form id="search-form">
+        <input type="text" name="" class="searchbox" id="find" placeholder="Search here...." onkeyup="search()" autocomplete="off">
+        <button class="button" type="submit">Search</button>
+    </form>
+    <!-- Dropdown menu for Search results -->
+    <div class="dropdown" id="product-dropdown">
+        <!-- Search results are added via JavaScript -->
+    </div>
+</div>
+<!--Search results styling is here for easier access-->
+<style>
+.dropdown {
+    position: absolute;
+    width: 66%;
+    max-height: 150px; 
+    overflow-y: auto; 
+    display: none; 
+    background-color: white;
+    border: 3px solid #000000;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    z-index: 1;
+    padding:10px;
+    margin-left:-4px;
+}
+.dropdown a{
+    display: block;
+    color:blue;
+    margin-bottom:5px;
+}
+.dropdown a:hover{
+    background-color:gainsboro;
+    padding:4px;
+}
+
+</style>
+<!--Java script for search function is here due to issues with adding it onto the main script sheet-->
+<script>
+   function search() {
+    let filter = document.getElementById('find').value.toUpperCase();
+    let dropdown = document.getElementById('product-dropdown');
+    dropdown.innerHTML = '';
+//results
+    let products = [
+        { name: "Contact me", url: "/BlakeG's%20Portfolio/Contact%20page/Contactme.html" },
+        { name: "Projects", url: "/BlakeG's%20Portfolio/Projects%20page/projects.html" },
+        { name: "Skills", url: "/BlakeG's%20Portfolio/Skills%20page/MySkills.html" }, 
+        { name: "Home", url: "/BlakeG's%20Portfolio/Home%20page/Home.html"},
+        { name: "Comments", url:"/BlakeG's%20Portfolio/Home%20page/Home.html#commenT"},
+        { name: "Contact Form", url:"/BlakeG's%20Portfolio/Contact%20page/Contactme.html#contactforM"},
+    ];
+
+    for (let i = 0; i < products.length; i++) {
+        let product = products[i];
+        if (product.name.toUpperCase().indexOf(filter) > -1) {
+            let option = document.createElement('a');
+            option.href = product.url;
+            option.textContent = product.name;
+            dropdown.appendChild(option);
+        }
+    }
+
+    // if searchbox === empty display none(hide search box if empty)
+    if (filter === "") {
+        dropdown.style.display = 'none';
+    } else if (dropdown.children.length > 0) {
+        dropdown.style.display = 'block';
+    } else {
+        dropdown.style.display = 'none';
+    }
+}
+</script>
+<!--navigation buttons-->
+        <div class="right-menu">
+            <ul>
+                <li><a href="/BlakeG's%20Portfolio/Home%20page/Home.html">Home</a></li>
+                    <li><a  href="/BlakeG's%20Portfolio/Skills%20page/MySkills.html" >MySkills</a></li>
+                    <li><a href="/BlakeG's%20Portfolio/Projects%20page/projects.html">Projects</a></li>
+                    <li><a href="/BlakeG's%20Portfolio/Contact%20page/Contactme.html" >Contact me</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="padding"></div>
+</main> 
+
+    <body>
+        <!--Body of page -->
+        <section   id="elementToChange" class="Aboutme Lightmode"><!--Light mode dark mode classes to switch between-->
+            
+        <h1 class="cmh1">Contact me</h1>
+        <p>Thank you for visiting my porfolio website I hope you found it easy to manuver around and maybe learnt some more about me 
+            if you have any questions for me or want to get in contact feel free too I have listed a few ways to easily get in contact with me including
+        my email addresses, social media and a easy to use contact form located in the email collapsable section  </p>
+        
+        <!--Contact methods-->
+        <div class="margin">
+            <div class="contactform">
+        <!--Email addresses section-->
+                <h1>Email addresses</h1>
+           
+                <h2>Here is both my personal email address and my NMIT email address</h2>
+                <ul class="eadd">
+                    <li><!--Links lead to a precomposed email where users can send me an email directly-->
+                        <p>Heres my personal email address where I'm the most active on, so if you have something urgent to talk to me about, please contact me here</p>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=blakegillanders@gmail.com&su=SUBJECT&body=BODY&bcc=">
+                            <i class="fas fa-envelope"></i> My personal email: Blakegillanders@gmail.com
+                        </a>
+                    </li>
+                    <li>
+                        <p>Heres my NMIT study email address where you can contact me about study-related questions.</p>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=blake-gillanders@live.nmit.ac.nz&su=SUBJECT&body=BODY&bcc=">
+                            <i class="fas fa-envelope"></i> MY NMIT email address: blake-gillanders@live.nmit.ac.nz
+                        </a>
+                    </li>
+                </ul>
+
+                </div>  
+            </div>
+    
+<!--Social media section (pretty empty)-->
+            <div class="margin">
+            <div class="contactform">
+                    <h1>Social media</h1>
+                </label>
+                
+                    <h2>Here are some links to all my social medias if you are interested</h2>
+
+                    <ul class="eadd">
+                        <li><a href=https://www.facebook.com/profile.php?id=100010154949455>Facebook: @Blake Gillanders</a></li>
+                        <li><a href=>Instagram @blakesg1420</a></li>
+                    </ul>
+
+                    
+                </div>
+            </div>
+                <!--Contact form Currently not functional-->
+                <section id="contactforM">
+                    <div class="contactform">
+                        <h1>Contact form</h1>
+                    
+                        <h2>Or you can send me a message using the contact form below </h2>
+                        <form action="https://formsubmit.co/blakegillanders@gmail.com" method="post">
+                            <label for="fname">First Name</label>
+                            <input class="enter"type="text" id="fname" name="first name" required><br>
+                            <label for="lname">Last name</label>
+                            <input class="enter" type="text" id="lname" name="surname" required><br>
+                            <label for="mail">E-mail Address</label>
+                            <input class="enter" type="text" id="mail" name="E-mail" required><br>
+                            <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
+                
+                    <button class="cb" type="submit">Send</button>
+                        </form>
+        
+                        </div>
+                    </section>
+        </details>
+        </section>
+        
+        
+        
+        
+        
+        
+       
+        </div>
+        
+            
+            
+        </section>
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+             import { getDatabase, ref, push, orderByChild, limitToLast, onValue, set } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+             import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+
+            const firebaseConfig = {
+             apiKey: "AIzaSyDuXB9PnKlU976r2mPyybC2oOyXRdw4C4E",
+            authDomain: "portfolio-636c4.firebaseapp.com",
+            databaseURL: "https://portfolio-636c4-default-rtdb.firebaseio.com",
+            projectId: "portfolio-636c4",
+            storageBucket: "portfolio-636c4.appspot.com",
+            messagingSenderId: "932093849356",
+            appId: "1:932093849356:web:5e5fe7874ab0b8e0b4e329",
+            measurementId: "G-2KEGL980YW"
+        };
+
+            const app = initializeApp(firebaseConfig);
+            const database = getDatabase(app);
+            const auth = getAuth(app);
+            //Sign out of account 
+   document.getElementById('sign-out-button').addEventListener('click', () => {
+    
+    getAuth().signOut().then(() => {
+        // Signed out redirect to the welcome page
+        window.location.href = "/BlakeG's%20Portfolio/Welcome Page.html";
+    }).catch((error) => {
+        // An error occurred during sign-out
+        console.error('Sign-out error:', error);
+    });
+});
+        </script>
+        <script src="/BlakeG's%20Portfolio/Home%20page/app.js"></script><!--Pages script-->
+       
+    </body>
+    <footer>
+        <div><!--footer section-->
+            <p>Thank you for visiting my portfolio page you have reached the bottom of the projects page. If you would like to get in contact with me I have 
+                my socials and contact details listed below.
+            </p>
+            <article class="footlank">
+                <nav class="footnav">
+                    <ul>
+                        <li><a href= https://www.facebook.com/profile.php?id=100010154949455>Facebook</a></li>
+                        <li><a href= https://mail.google.com/mail/?view=cm&fs=1&to=blakegillanders@gmail.com&su=SUBJECT&body=BODY&bcc=>Gmail</a></li>
+                        <li><a href= Contactme.html>Contact me</a></li>
+                    </ul>
+                </nav>
+    
+            </article>
+    </footer>
+
+</html>
