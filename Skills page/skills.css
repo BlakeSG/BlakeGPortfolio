@@ -278,12 +278,21 @@ header {
 .Lightmode h2{
     color:#333;
 }
+.Lightmode h1{
+    color:#333;
+}
+.Lightmode p{
+    color:#333;
+}
+.Lightmode hr{
+    border:3px solid black;
+}
 
 
 /*Dark Mode*/
 .Darkmode{
-    background-color:rgb(53, 53, 53);
-    color:white;
+    background-color:rgb(71, 71, 71);
+    color:rgb(0, 0, 0);
     border: 3px solid rgb(111, 194, 4);
     box-shadow: 0px 0px 10px rgb(111, 194, 4);
 }
@@ -293,72 +302,146 @@ header {
 .Darkmode h3{
     color:white;
 }
-
+.Darkmode hr{
+    border:3px solid rgb(255, 255, 255);
+}
 
 /*Body styles*/
-.cmh1{
-    text-align: center;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-   border-radius:2px;
-    border-bottom:solid 1px #333;
-    letter-spacing: 4px;
-
+body {
+    background-color: white;
 }
-.title{
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-   border-radius:2px;
-    border-bottom:solid 3px ;
-    letter-spacing: 4px;
-    box-shadow:2px 2px 2px #33333365;
-}
-.project-description {
-    font-size: 1rem; 
-    line-height: 1.6; 
-    letter-spacing:1px;
-    margin-bottom:50px;
-  }
 
-  .Web502 {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+.block {
+    margin: 40px;
+    background-color: rgb(73, 73, 73);
+    max-width: 57%;
+    margin-left: 20%;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #2727275b;
-    margin-bottom: 20px;
-    
+    overflow:visible
 }
 
-.Web502 h1 {
+details > summary {
+    list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-title {
+    padding-top: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(255, 253, 119);
     text-align: center;
-    font-size: 2rem;
-   
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    margin-top:-3px;
-    border-bottom:1px solid ;
-    
-    
 }
 
-.Web502 p {
-    text-align: justify;
-    line-height: 1.5;
+.page-description {
+    color: rgb(219, 219, 219);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+.section-divider {
+    border: 3px solid ;
+}
+.section-div {
+    border: 3px solid black;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: space-around;
+}
+
+.icon {
+    margin: 10px;
+    text-align: center;
+    position: relative;
+    width: calc(20% - 20px);
+    cursor: pointer;
+}
+
+.skill-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.skill-title {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    margin-top: 10px;
+}
+
+.skill-icon {
+    max-width: 100px;
+    transition: transform 0.3s ease;
+}
+
+.skill-icon:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.description {
+    background-color: white;
+    text-align: center;
+    top: 100%;
+    width: 200%;
+    padding:10px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     
     
 }
-li{
-    list-style:none;
-    
+.description-middle{
+    margin-left:-110px;
+    background-color: white;
+    text-align: center;
+    top: 100%;
+    width: 200%;
+    padding:10px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.ul{
-    margin-left:-30px;
+.description-left{
+    margin-left:-115px;
+    background-color: white;
+    text-align: center;
+    top: 100%;
+    width: 200%;
+    padding:10px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+.description-rightmid{
+    margin-left:-115px;
+    background-color: white;
+    text-align: center;
+    top: 100%;
+    width: 200%;
+    padding:10px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+    .description-right{
+        margin-left:-235px;
+        background-color: white;
+        text-align: center;
+        top: 100%;
+        width: 200%;
+        padding:10px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    } 
+
+.hach h2{
+    color:#333;
+    text-transform:uppercase;
+    letter-spacing: 2.5px;
+    font-weight:bold;
+    font-size:2.5rem;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
 .Aboutme { 
     padding: 20px;
     margin: 20px auto;
