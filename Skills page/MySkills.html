@@ -398,6 +398,18 @@ products = [
    const app = initializeApp(firebaseConfig);
    const database = getDatabase(app);
    const auth = getAuth(app);
+                 //Check if users are authenticated
+      //This allows me to ensure only authenticated users have access to the website
+      onAuthStateChanged(auth, (user) => {
+       if (user) {
+           // User is signed in
+           console.log('User is signed in');
+       } else {
+           // User is not signed in
+           console.log('User is not signed in');
+           window.location.href = "https://blakesg.github.io/BlakeGPortfolio/Welcome%20page/Welcome%20Page.html";
+       }
+   });
    //Sign out of account 
    document.getElementById('sign-out-button').addEventListener('click', () => {
     
