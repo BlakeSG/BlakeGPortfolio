@@ -286,6 +286,7 @@ header {
 .padding{
     padding: 10px 0 40px 0;
 }
+
 .Aboutme {
     padding: 20px;
     margin: 20px auto;
@@ -295,93 +296,92 @@ header {
     align-content:center;
 }
 .about-content {
-   line-height:1.6; 
-   font-size:18px;
-    border:1px solid rgba(0, 0, 0, 0.1);
-    padding: 5px;
-    background-color:#c0fe913a; 
-    
-}
-.section-content {
-    padding: 10px;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-   
-}
-details{
-    cursor:pointer;
-}
-
-.Web502 {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    background-color:rgba(204, 203, 203, 0.863);
-    transition: transform 0.5s ease, margin 0.2s ease;
-}
-.Web502:hover{
- transform: scale(1.1);
- margin-bottom:40px;
- margin-top:40px;
- 
- 
-}
-.Web502 h2 {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-.Web502 p {
-    text-align: justify;
-    line-height: 1.5;
-}
-
-.Web502 details {
-    margin-top: 15px;
-}
-
-.Web502 summary {
-    font-weight: bold;
-    cursor: pointer;
-    color: #007bff;
-}
-
-.Web502 a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.Web502 a:hover {
-    text-decoration: underline;
-}
-.title {
-    font-size: 2.5rem; 
-    text-transform: uppercase; 
-    letter-spacing: 4px; 
-    margin-bottom: 20px; 
-    text-align:center;
-    border-bottom:3px solid ;
-    padding-bottom:20px;
-  }
-.title-effect {
-    font-size: 2.5rem; 
-    text-transform: uppercase; 
-    letter-spacing: 4px; 
-    margin-bottom: 20px; 
-  }
-  
-  .project-description {
-    font-size: 1.2rem; 
-    line-height: 1.6; 
-  }
-  
-.web502 ul{
-    list-style:none;
+    line-height:1.6; 
+    font-size:18px;
+     border:1px solid rgba(0, 0, 0, 0.1);
+     padding: 5px;
+     background-color:#c0fe913a; 
+     
  }
-
+ .section-content {
+     padding: 10px;
+     overflow: hidden;
+     transition: max-height 0.3s ease-in-out;
+    
+ }
+ details{
+     cursor:pointer;
+ }
+ 
+ .Web502 {
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+     padding: 20px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     margin-bottom: 20px;
+     background-color:rgba(204, 203, 203, 0.863);
+     transition: transform 0.5s ease, margin 0.2s ease;
+ }
+ .Web502:hover{
+  transform: scale(1.1);
+  margin-bottom:40px;
+  margin-top:40px;
+  
+  
+ }
+ .Web502 h2 {
+     text-align: center;
+     font-size: 24px;
+     margin-bottom: 10px;
+     text-transform: uppercase;
+ }
+ .Web502 p {
+     text-align: justify;
+     line-height: 1.5;
+ }
+ 
+ .Web502 details {
+     margin-top: 15px;
+ }
+ 
+ .Web502 summary {
+     font-weight: bold;
+     cursor: pointer;
+     color: #007bff;
+ }
+ 
+ .Web502 a {
+     color: #007bff;
+     text-decoration: none;
+ }
+ 
+ .Web502 a:hover {
+     text-decoration: underline;
+ }
+ .title {
+     font-size: 2.5rem; 
+     text-transform: uppercase; 
+     letter-spacing: 4px; 
+     margin-bottom: 20px; 
+     text-align:center;
+     border-bottom:3px solid ;
+     padding-bottom:20px;
+   }
+ .title-effect {
+     font-size: 2.5rem; 
+     text-transform: uppercase; 
+     letter-spacing: 4px; 
+     margin-bottom: 20px; 
+   }
+   
+   .project-description {
+     font-size: 1.2rem; 
+     line-height: 1.6; 
+   }
+   
+ .web502 ul{
+     list-style:none;
+  }
 
 /*footer section*/
 footer{
@@ -470,17 +470,15 @@ nav a:hover {
     }
 
     /* Search bar styles */
-    .search-bar {
-        left: 20%;
-        flex: 1;
-        position: absolute;
+    .search-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
     }
-
     .searchbox {
-        border-radius: 5px;
-        padding: 3px;
-        width: 80%;
-        box-sizing: border-box;
+        margin-left:-32px;
+        width: 120%;
     }
 
     
@@ -534,19 +532,7 @@ nav a:hover {
         transform: scale(1.1);
     }
 
-    /* Search bar styles */
-    .search-bar {
-        left: 40%;
-        flex: 1;
-        position: absolute;
-    }
-
-    .searchbox {
-        border-radius: 5px;
-        padding: 3px;
-        width: 70%;
-        box-sizing: border-box;
-    }
+   
 
     
 
