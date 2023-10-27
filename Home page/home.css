@@ -745,6 +745,12 @@ footer{
         padding: 160px 0 140px 0;
     }
     /*Bodycontent*/
+    #comment-input {
+        width:284px;
+    }
+    #Name{
+        width:300px;
+}
     .image{
         display:none;
         
@@ -753,10 +759,8 @@ footer{
         margin-left:auto;
     }
     .button {
-       display:none;
+        display:none;
     }
-
-   
 
     /* Search bar styles */
     .search-container {
