@@ -105,9 +105,25 @@ and pulls the user name from storage for reuse on the page.-->
 <!--Java script for search function is here due to issues with adding it onto the main script sheet-->
 <script>
    function search() {
-    let filter = document.getElementById('find').value.toUpperCase();
-    let dropdown = document.getElementById('product-dropdown');
-    dropdown.innerHTML = '';
+  let filter = document.getElementById('find').value.trim().toUpperCase();
+  let dropdown = document.getElementById('product-dropdown');
+  dropdown.innerHTML = '';
+//Easter egg(inspited by google)
+  // Check if user has typed spin
+  if (filter === "SPIN") {
+    // Apply a CSS animation to rotate the page
+    document.body.style.animation = "barrelRoll 0.1s linear infinite";
+  } 
+
+ //earthquake easter egg
+ else if (filter === "EARTHQUAKE") {
+    // Apply a CSS animation to create the earthquake effect
+    document.body.style.animation = "earthquake 0.1s linear infinite";
+  } else {
+    // Reset to none
+    document.body.style.animation = "none";
+  }
+
 //results
     let products = [
         { name: "Contact me", url: "https://blakesg.github.io/BlakeGPortfolio/Contact%20page/Contactme.html" },
