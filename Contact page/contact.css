@@ -495,12 +495,23 @@ footer{
     }
    
     /*Bodycontent*/
-    
+    #message{
+        width:320px;
+    }
+    #fname{
+        width:320px;
+    }
+    #lname{
+    width:320px;
+    }
+    #mail{
+        width:320px;
+    }
     .text-container{
         margin-left:auto;
     }
     .button {
-       display:none;
+        display:none;
     }
 
     /* Search bar styles */
