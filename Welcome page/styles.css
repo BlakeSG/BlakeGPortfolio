@@ -111,3 +111,25 @@ button{
     color:white;
     font-size: 2rem; 
 }
+
+@media screen and (max-width: 768px) {
+    .Logbox{
+        width:300px;
+    }
+
+    #login{
+        width:300px;
+    }
+    #toggleSignUpFromLogin{
+        width:300px;
+    }
+    input{
+        width:280px;
+    }
+    #signup{
+        width:300px;
+    }
+    #toggleLoginFromSignUp{
+        width:300px;
+    }
+}
