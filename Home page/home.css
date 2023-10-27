@@ -761,18 +761,10 @@ nav a:hover {
         margin-left:auto;
     }
     .button {
-        background-color: black;
-        color: white;
-        border-radius: 5px;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        transition: background-color 0.3s ease, transform 0.3s ease; /* Combine transitions */
-        padding:3px;
+       display:none;
     }
 
-    .button:hover {
-        background-color: rgba(1, 83, 150, 0.786);
-        transform: scale(1.1);
-    }
+   
 
     /* Search bar styles */
     .search-container {
