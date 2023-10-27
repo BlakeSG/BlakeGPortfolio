@@ -869,4 +869,36 @@ footer{
  
  
 }
+@keyframes barrelRoll {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+ 
+  @keyframes earthquake {
+    0% {
+      transform: translate(0, 0);
+    }
+    10% {
+      transform: translate(-30px, -30px);
+    }
+    20% {
+      transform: translate(30px, 30px);
+    }
+    30% {
+      transform: translate(-30px, -30px);
+    }
+    40% {
+      transform: translate(30px, -30px);
+    }
+    50% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
 
