@@ -533,36 +533,56 @@ nav a:hover {
     }
    
     /*Bodycontent*/
+    .skill-icon{
+        width:55px;
+    }
+    .skill-title{
+        font-size:16px;
+    }
     
     .text-container{
         margin-left:auto;
     }
-    .button {
-        background-color: black;
-        color: white;
-        border-radius: 5px;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        transition: background-color 0.3s ease, transform 0.3s ease; /* Combine transitions */
+    .skill-summary{
+        margin-bottom:-20px;
     }
 
-    .button:hover {
-        background-color: rgba(1, 83, 150, 0.786);
-        transform: scale(1.1);
-    }
+.button {
+    display:none;
+}
 
-    /* Search bar styles */
-    .search-bar {
-        left: 20%;
-        flex: 1;
-        position: absolute;
-    }
+/*skill descs*/
+.description{
+    width:340px;
+}
+.description-left{
+    width:340px;
+    margin-left:-88px;
+}
+.description-middle{
+    width:340px;
+    margin-left:-156px;
+}
+.description-rightmid{
+    width:340px;
+    margin-left:-224px;
+}
+.description-right{
+    width:340px;
+    margin-left:-293px;
+}
 
-    .searchbox {
-        border-radius: 5px;
-        padding: 3px;
-        width: 80%;
-        box-sizing: border-box;
-    }
+/* Search bar styles */
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.searchbox {
+    margin-left:-32px;
+    width: 120%;
+}
 
     
 
@@ -616,19 +636,7 @@ nav a:hover {
     }
 
     /* Search bar styles */
-    .search-bar {
-        left: 40%;
-        flex: 1;
-        position: absolute;
-    }
-
-    .searchbox {
-        border-radius: 5px;
-        padding: 3px;
-        width: 70%;
-        box-sizing: border-box;
-    }
-
+    
     
 
     /* Right navigation bar buttons */
