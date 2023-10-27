@@ -357,27 +357,7 @@ header {
 .contactform a{
     color:blue;
 }
-/**.contactform{
-    border: 2px solid ;
-    border-radius:5px;
-    background-color:rgba(255, 255, 255, 0.13);
 
-}**/
-/**.contactform h1{
-    text-align: center;
-    font-size: 2rem;
-
-    margin-bottom: 10px;
-    text-transform: uppercase;
-   border-radius:2px;
-    border-bottom:solid 1px ;
-    padding-bottom:5px;
-    letter-spacing: 4px; 
-    margin-bottom: 20px; 
-    margin-top:0px;
-    padding-top:10px;
-    background-color:#aaaaaa67;
-}**/
 .contactform h1{
     text-align: center;
     font-size: 2rem;
@@ -543,18 +523,17 @@ nav a:hover {
     }
 
     /* Search bar styles */
-    .search-bar {
-        left: 20%;
-        flex: 1;
-        position: absolute;
+    .search-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    .searchbox {
+        margin-left:-32px;
+        width: 120%;
     }
 
-    .searchbox {
-        border-radius: 5px;
-        padding: 3px;
-        width: 80%;
-        box-sizing: border-box;
-    }
 
     
 
@@ -607,19 +586,7 @@ nav a:hover {
         transform: scale(1.1);
     }
 
-    /* Search bar styles */
-    .search-bar {
-        left: 40%;
-        flex: 1;
-        position: absolute;
-    }
-
-    .searchbox {
-        border-radius: 5px;
-        padding: 3px;
-        width: 70%;
-        box-sizing: border-box;
-    }
+    
 
     
 
